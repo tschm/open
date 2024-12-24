@@ -17,7 +17,7 @@ def _(df):
     import plotly.graph_objects as go
 
     # Extract the last 5 rows
-    df_tail = df.tail().drop(['dividend','volume'], axis=1)
+    df_tail = df.drop(['dividend','volume'], axis=1)
 
     # Create an empty figure
     fig = go.Figure()
