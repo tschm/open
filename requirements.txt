@@ -1,4 +1,5 @@
 openbb==4.3.5
+openbb-cli
 plotly
 python-dotenv
 
