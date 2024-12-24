@@ -20,24 +20,22 @@ PAT=<COPY of your Personal Access Token>
 
 The .env file is listed explicitly in .gitignore.
 
-## The problem
-
-Given $N$ random points in an $m$ dimensional space we compute
-the center $x$ and the radius $r$ of a ball such that all $N$
-points are contained in this ball.
-
-## Makefile
-
-Create the virtual environment defined in requirements.txt using
-
-```bash
-make install
-```
-
 ## Marimo
 
-We use Marimo (instead of Jupyter) to perform our experiments. Start with
+Start the marimo server with
 
 ```bash
 make marimo
 ```
+
+We have a notebook there using the openbb package to extract data.
+
+## Start the openbb REST API
+
+Start with
+
+```bash
+make rest
+```
+
+Visit the [api docs](https://localhost:8000/docs)
