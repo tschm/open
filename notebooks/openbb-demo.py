@@ -6,7 +6,20 @@ app = marimo.App(width="medium")
 
 @app.cell
 def _():
+    import os
+    from dotenv import load_dotenv
+
+    success = load_dotenv(verbose=True, override=True)
+    assert success, "No environment variable has been set"
+    api_token = os.getenv("PAT")
+    return api_token, load_dotenv, os, success
+
+
+@app.cell
+def _(api_token):
     from openbb import obb
+    obb.account.login(pat=api_token)
+
     output = obb.equity.price.historical("AAPL")
     df = output.to_dataframe()
     return df, obb, output
@@ -43,11 +56,6 @@ def _(df):
     # Show the plot
     fig.show()
     return column, df_tail, fig, go
-
-
-@app.cell
-def _():
-    return
 
 
 if __name__ == "__main__":

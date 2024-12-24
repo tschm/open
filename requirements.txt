@@ -1,5 +1,6 @@
 openbb==4.3.5
 plotly
+python-dotenv
 
 # we also install them on the fly in the Makefile
 marimo==0.10.6
