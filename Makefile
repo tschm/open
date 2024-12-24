@@ -9,7 +9,7 @@ venv: ## Create the virtual environment
 .PHONY: install
 install: venv ## Install a virtual environment
 	@uv pip install --upgrade pip
-	@uv pip install -r requirements.txt
+	@uv pip install -r requirements.txt --prerelease=allow
 
 
 .PHONY: fmt
