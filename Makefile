@@ -29,3 +29,9 @@ help:  ## Display this help screen
 marimo: install ## Install Marimo
 	@uv pip install marimo
 	@uv run marimo edit notebooks
+
+.PHONY: rest
+rest: install ## Start rest api
+	@echo Visit localhost:8000/docs
+	@uv run uvicorn openbb_core.api.rest_api:app --host 0.0.0.0 --port 8000 --reload
+
