@@ -38,8 +38,8 @@ def _(df):
     # Loop through each column (excluding the Date column) and add a trace for each
     for column in df_tail.columns:
         fig.add_trace(go.Scatter(
-            x=df_tail.index, 
-            y=df_tail[column], 
+            x=df_tail.index,
+            y=df_tail[column],
             mode='lines+markers',  # 'lines+markers' shows both lines and data points
             name=column  # The legend will show the column name
         ))

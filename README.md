@@ -1,6 +1,24 @@
-# Compute the minimal enclosing circle
+# Experiments with openBB
 
-We use different solvers and compare readability and speed.
+Install openBB locally with
+
+```bash
+make install
+```
+
+## Create a local .env file
+
+Set your keys at [OpenBB Hub](https://my.openbb.co/app/platform/credentials)
+and get your personal access token from
+<https://my.openbb.co/app/platform/pat> to connect with your account.
+
+Create the local .env file and set
+
+```bash
+PAT=<COPY of your Personal Access Token>
+```
+
+The .env file is listed explicitly in .gitignore.
 
 ## The problem
 
