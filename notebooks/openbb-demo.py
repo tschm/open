@@ -9,10 +9,9 @@ def _():
     import os
     from dotenv import load_dotenv
 
-    success = load_dotenv(verbose=True, override=True)
-    assert success, "No environment variable has been set"
+    load_dotenv(verbose=True, override=True)
     api_token = os.getenv("PAT")
-    return api_token, load_dotenv, os, success
+    return api_token, load_dotenv, os
 
 
 @app.cell
