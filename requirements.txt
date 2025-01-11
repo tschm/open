@@ -4,5 +4,5 @@ plotly
 python-dotenv
 
 # we also install them on the fly in the Makefile
-marimo==0.10.10
+marimo==0.10.12
 pre-commit==4.0.1
