@@ -1,5 +1,7 @@
 # Experiments with openBB
 
+[![CodeFactor](https://www.codefactor.io/repository/github/tschm/open/badge)](https://www.codefactor.io/repository/github/tschm/open)
+
 Install openBB locally with
 
 ```bash
