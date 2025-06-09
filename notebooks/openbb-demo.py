@@ -7,6 +7,7 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import os
+
     from dotenv import load_dotenv
 
     load_dotenv(verbose=True, override=True)
