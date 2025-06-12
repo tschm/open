@@ -1,36 +1,44 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "marimo==0.13.15",
+#     "python-dotenv==1.1.0",
+#     "openbb==4.4.3",
+#     "plotly==6.1.2",
+# ]
+# ///
 import marimo
 
-__generated_with = "0.10.6"
+__generated_with = "0.13.15"
 app = marimo.App(width="medium")
 
-
+with app.setup:
+    from dotenv import load_dotenv
+    import openbb as obb
+    import plotly.graph_objects as go
+    
 @app.cell
 def _():
     import os
 
-    from dotenv import load_dotenv
-
     load_dotenv(verbose=True, override=True)
     api_token = os.getenv("PAT")
-    return api_token, load_dotenv, os
-
+    return api_token
+    
 
 @app.cell
 def _(api_token):
-    from openbb import obb
     obb.account.login(pat=api_token)
 
     output = obb.equity.price.historical("AAPL")
-    df = output.to_dataframe()
-    return df, obb, output
+    dframe = output.to_dataframe()
+    return dframe
 
 
 @app.cell
-def _(df):
-    import plotly.graph_objects as go
-
+def _(dframe):
     # Extract the last 5 rows
-    df_tail = df.drop(['dividend','volume'], axis=1)
+    df_tail = dframe.drop(['dividend','volume'], axis=1)
 
     # Create an empty figure
     fig = go.Figure()
@@ -54,9 +62,7 @@ def _(df):
     )
 
     # Show the plot
-    fig.show()
-    return column, df_tail, fig, go
-
+    fig
 
 if __name__ == "__main__":
     app.run()
