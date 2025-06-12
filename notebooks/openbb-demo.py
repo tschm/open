@@ -13,10 +13,11 @@ __generated_with = "0.13.15"
 app = marimo.App(width="medium")
 
 with app.setup:
-    from dotenv import load_dotenv
     import openbb as obb
     import plotly.graph_objects as go
-    
+
+    from dotenv import load_dotenv
+
 @app.cell
 def _():
     import os
