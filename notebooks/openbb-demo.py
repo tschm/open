@@ -15,7 +15,6 @@ app = marimo.App(width="medium")
 with app.setup:
     import openbb as obb
     import plotly.graph_objects as go
-
     from dotenv import load_dotenv
 
 @app.cell
@@ -25,7 +24,7 @@ def _():
     load_dotenv(verbose=True, override=True)
     api_token = os.getenv("PAT")
     return api_token
-    
+
 
 @app.cell
 def _(api_token):
