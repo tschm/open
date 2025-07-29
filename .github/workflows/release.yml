@@ -20,6 +20,6 @@ jobs:
     steps:
       - name: Generate Tag
         id: tag_step
-        uses: tschm/cradle/actions/tag@v0.3.04  # Use the tag action to generate a new version tag
+        uses: tschm/cradle/actions/tag@v0.3.06  # Use the tag action to generate a new version tag
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
