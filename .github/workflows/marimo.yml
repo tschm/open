@@ -17,7 +17,7 @@ jobs:
     steps:
       # Check out the repository code
       - name: Checkout [${{ github.repository }}]
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install the latest version of uv and set the python version
         uses: astral-sh/setup-uv@v6
