@@ -3,7 +3,7 @@
 # dependencies = [
 #     "marimo==0.13.15",
 #     "python-dotenv==1.1.0",
-#     "openbb==4.4.3",
+#     "openbb-core==1.4.8",
 #     "plotly==6.1.2",
 # ]
 # ///
