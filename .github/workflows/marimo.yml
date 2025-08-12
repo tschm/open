@@ -26,6 +26,6 @@ jobs:
 
       - name: Run notebook
         run: |
-          uvx marimo run notebooks/openbb-demo.py --sandbox --no-browser & pid=$!
+          uvx marimo run book/marimo/openbb-demo.py --sandbox --no-browser & pid=$!
           sleep 1
           kill $pid
