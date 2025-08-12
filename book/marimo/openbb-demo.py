@@ -23,7 +23,6 @@ with app.setup:
     import plotly.graph_objects as go
 
 
-
 @app.cell
 def _():
     from openbb_core.sdk import openbb
@@ -39,18 +38,14 @@ def _():
 
     return df
 
+
 @app.cell
 def _(df):
     # Create a Plotly candlestick chart
     fig = go.Figure(
         data=[
             go.Candlestick(
-                x=df["date"],
-                open=df["open"],
-                high=df["high"],
-                low=df["low"],
-                close=df["close"],
-                name="AAPL"
+                x=df["date"], open=df["open"], high=df["high"], low=df["low"], close=df["close"], name="AAPL"
             )
         ]
     )
@@ -60,7 +55,7 @@ def _(df):
         yaxis_title="Price (USD)",
         xaxis_title="Date",
         template="plotly_dark",
-        xaxis_rangeslider_visible=False
+        xaxis_rangeslider_visible=False,
     )
 
     fig.show()
