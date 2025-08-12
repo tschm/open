@@ -62,7 +62,7 @@ def _(dframe):
     )
 
     # Show the plot
-    fig
+    # fig
 
 if __name__ == "__main__":
     app.run()
