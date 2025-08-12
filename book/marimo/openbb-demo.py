@@ -8,6 +8,12 @@
 # ]
 # ///
 
+"""OpenBB demonstration notebook using Marimo.
+
+This script demonstrates how to use the OpenBB SDK to fetch financial data
+for Apple Inc. and visualize it using Plotly within a Marimo interactive app.
+"""
+
 import marimo
 
 __generated_with = "0.14.16"
@@ -15,6 +21,7 @@ app = marimo.App(width="medium")
 
 with app.setup:
     import plotly.graph_objects as go
+
 
 
 @app.cell
@@ -58,6 +65,7 @@ def _(df):
 
     fig.show()
     return fig
+
 
 if __name__ == "__main__":
     main = app.run

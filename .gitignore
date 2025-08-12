@@ -11,6 +11,9 @@ _marimushka
 # temp file used by Junie
 .output.txt
 
+# .env file for configuration
+.env
+
 quantstats.md
 
 # Byte-compiled / optimized / DLL files
