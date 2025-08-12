@@ -8,6 +8,12 @@
 # ]
 # ///
 
+"""OpenBB demonstration notebook using Marimo.
+
+This script demonstrates how to use the OpenBB SDK to fetch financial data
+for Apple Inc. and visualize it using Plotly within a Marimo interactive app.
+"""
+
 import marimo
 
 __generated_with = "0.14.16"
@@ -32,18 +38,14 @@ def _():
 
     return df
 
+
 @app.cell
 def _(df):
     # Create a Plotly candlestick chart
     fig = go.Figure(
         data=[
             go.Candlestick(
-                x=df["date"],
-                open=df["open"],
-                high=df["high"],
-                low=df["low"],
-                close=df["close"],
-                name="AAPL"
+                x=df["date"], open=df["open"], high=df["high"], low=df["low"], close=df["close"], name="AAPL"
             )
         ]
     )
@@ -53,11 +55,12 @@ def _(df):
         yaxis_title="Price (USD)",
         xaxis_title="Date",
         template="plotly_dark",
-        xaxis_rangeslider_visible=False
+        xaxis_rangeslider_visible=False,
     )
 
     fig.show()
     return fig
+
 
 if __name__ == "__main__":
     main = app.run
