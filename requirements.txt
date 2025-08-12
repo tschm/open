@@ -1,7 +1,0 @@
-# openbb==4.4.3
-# openbb-cli
-# plotly
-# python-dotenv
-
-# we also install them on the fly in the Makefile
-# marimo==0.12.5
