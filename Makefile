@@ -1,29 +1,32 @@
+# Colors for pretty output
+BLUE := \033[36m
+BOLD := \033[1m
+GREEN := \033[32m
+RESET := \033[0m
+
 .DEFAULT_GOAL := help
 
-.PHONY: uv
-venv: ## Install uv/uvx
-	@curl -LsSf https://astral.sh/uv/install.sh | sh
+.PHONY: build clean book check
 
-.PHONY: fmt
-fmt: uv ## Run autoformatting and linting
-	@uvx pre-commit install
-	@uvx pre-commit run --all-files
+install: ## install
+	task build:install
 
-.PHONY: help
-help:  ## Display this help screen
-	@echo -e "\033[1mAvailable commands:\033[0m"
-	@grep -E '^[a-z.A-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-18s\033[0m %s\n", $$1, $$2}' | sort
+clean: ## clean
+	task cleanup:clean
 
-.PHONY: marimo
-marimo: uv ## Install Marimo
-	#@uv pip install marimo
-	@uvx marimo edit --sandbox notebooks/openbb-demo.py
+test: install ## run all tests
+	task docs:test
 
-.PHONY: rest
-rest: uv ## Start rest api
-	@echo Visit localhost:8000/docs
-	@uvx uvicorn openbb_core.api.rest_api:app --host 0.0.0.0 --port 8000 --reload
+book: test ## compile the companion book
+	task docs:docs
+	task docs:marimushka
+	task docs:book
 
-.PHONY: openbb
-openbb: uv ## Start openbb cli
-	@uvx openbb
+check: install ## check the pre-commit hooks, the linting and deptry
+	task quality:check
+
+help: ## Display this help message
+	@printf "$(BOLD)Usage:$(RESET)\n"
+	@printf "  make $(BLUE)<target>$(RESET)\n\n"
+	@printf "$(BOLD)Targets:$(RESET)\n"
+	@awk 'BEGIN {FS = ":.*##"; printf ""} /^[a-zA-Z_-]+:.*?##/ { printf "  $(BLUE)%-15s$(RESET) %s\n", $$1, $$2 } /^##@/ { printf "\n$(BOLD)%s$(RESET)\n", substr($$0, 5) }' $(MAKEFILE_LIST)
