@@ -22,16 +22,6 @@ PAT=<COPY of your Personal Access Token>
 
 The .env file is listed explicitly in .gitignore.
 
-## Marimo
-
-Start the marimo server with
-
-```bash
-make marimo
-```
-
-We have a notebook there using the openbb package to extract data.
-
 ## Start the openbb REST API
 
 Start with
