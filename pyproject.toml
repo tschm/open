@@ -1,46 +1,7 @@
-###############################
-# Project configuration
-# This file enables uv/uvx to manage the environment and developer tools.
-# It also provides basic PEP 621 metadata. Adjust as your project evolves.
-###############################
-
 [project]
 name = "open"
-version = "0.0.0"
-description = "Experiments with OpenBB"
+version = "0.1.0"
+description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "MIT" }
-authors = [
-  { name = "Thomas Schmelzer" }
-]
-keywords = ["openbb", "experiments"]
-classifiers = [
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3 :: Only",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent",
-]
-
-# No mandatory runtime dependencies for now.
-# Add your runtime dependencies here when needed, e.g.:
-# dependencies = ["openbb>=4"]
-
-[project.optional-dependencies]
-# Developer tooling used by Makefile targets and local workflows
-dev = [
-  "pre-commit>=3.7",
-  "ruff>=0.6.9",
-  "pytest>=8.3",
-  "pytest-cov>=5.0",
-  "deptry>=0.16",
-]
-
-# Notebook/Marimo environment for the content under book/marimo
-marimo = [
-  "marimo>=0.7.17",
-]
-
-[tool.uv]
-# Install the dev tools by default when running `uv sync`
-default-groups = ["dev"]
+dependencies = []
