@@ -7,6 +7,8 @@ requires-python = ">=3.11"
 dependencies = [
     "marimo>=0.18.4",
     "numpy>=2.4.0",
+    "openbb-core>=1.5.6",
     "packaging>=25.0",
+    "pandas>=2.3.3",
     "plotly>=6.5.0",
 ]
