@@ -3,7 +3,7 @@
 # dependencies = [
 #     "marimo==0.14.16",
 #     "python-dotenv==1.1.0",
-#     "openbb-core==1.4.8",
+#     "openbb-core==1.5.7",
 #     "plotly==6.2.0"
 # ]
 # ///
@@ -25,10 +25,10 @@ with app.setup:
 
 @app.cell
 def _():
-    from openbb_core.sdk import openbb
+    from openbb import obb
 
     # Fetch historical prices for AAPL
-    result = openbb.equity.price.historical(symbol="AAPL")
+    result = obb.equity.price.historical(symbol="AAPL")
 
     # Convert OBObject to DataFrame
     df = result.to_dataframe()
