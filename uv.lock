@@ -851,7 +851,7 @@ name = "open"
 version = "0.1.0"
 source = { virtual = "." }
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 dev = [
     { name = "marimo" },
     { name = "numpy" },
@@ -861,14 +861,15 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "marimo", marker = "extra == 'dev'", specifier = ">=0.18.4" },
-    { name = "numpy", marker = "extra == 'dev'", specifier = ">=2.4.0" },
-    { name = "openbb-core", marker = "extra == 'dev'", specifier = ">=1.5.6" },
-    { name = "pandas", marker = "extra == 'dev'", specifier = ">=2.3.3" },
-    { name = "plotly", marker = "extra == 'dev'", specifier = ">=6.5.0" },
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "marimo", specifier = ">=0.18.4" },
+    { name = "numpy", specifier = ">=2.4.0" },
+    { name = "openbb-core", specifier = ">=1.5.6" },
+    { name = "pandas", specifier = ">=2.3.3" },
+    { name = "plotly", specifier = ">=6.5.0" },
 ]
-provides-extras = ["dev"]
 
 [[package]]
 name = "openbb-core"
