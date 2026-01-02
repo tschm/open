@@ -35,6 +35,9 @@ def _():
     # Convert OBObject to DataFrame
     df = result.to_dataframe()
 
+    # Reset index to make date a regular column
+    df = df.reset_index()
+
     # Make sure Date is sorted ascending
     df = df.sort_values("date")
 
