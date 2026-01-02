@@ -17,3 +17,6 @@ dev = [
     "pandas>=2.3.3",
     "plotly>=6.5.0",
 ]
+
+[tool.deptry.package_module_name_map]
+openbb-core = "openbb"
