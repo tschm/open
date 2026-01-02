@@ -3,7 +3,9 @@
 # dependencies = [
 #     "marimo==0.14.16",
 #     "python-dotenv==1.1.0",
-#     "openbb-core==1.5.7",
+#     "openbb-core>=1.5.7",
+#     "openbb-equity>=1.5.1",
+#     "openbb-yfinance>=1.5.2",
 #     "plotly==6.2.0"
 # ]
 # ///
@@ -32,6 +34,9 @@ def _():
 
     # Convert OBObject to DataFrame
     df = result.to_dataframe()
+
+    # Reset index to make date a regular column
+    df = df.reset_index()
 
     # Make sure Date is sorted ascending
     df = df.sort_values("date")
