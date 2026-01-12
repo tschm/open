@@ -16,7 +16,7 @@ and get your personal access token from
 
 Create the local .env file and set
 
-```bash
+```
 PAT=<COPY of your Personal Access Token>
 ```
 
