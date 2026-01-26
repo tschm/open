@@ -19,4 +19,10 @@ dev = [
 ]
 
 [tool.deptry.package_module_name_map]
+marimo = "marimo"
+numpy = "numpy"
 openbb-core = "openbb"
+openbb-equity = "openbb_equity"
+openbb-yfinance = "openbb_yfinance"
+pandas = "pandas"
+plotly = "plotly"
